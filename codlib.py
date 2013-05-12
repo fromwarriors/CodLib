@@ -1,8 +1,10 @@
+#! usr/bin/env python
+
 # CodLib v1.2a
 # Programmer: Michael Oselskyi
 #DISCLAIMER: NOT COMPLETE! GUI soon though.
 
-#! usr/bin/env python
+
 
 import os 
 import sys
