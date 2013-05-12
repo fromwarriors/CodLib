@@ -58,8 +58,8 @@ class applySnip:
 			snip.appl()
 	def pyAppl(self):
 		print "Is your snippet multilined? y/n"
-		option = raw_input('codlib> ')
-		if option == 'y' or option == 'Y':
+		option = raw_input('codlib> ').lower()[0]
+		if option == 'y':
 			# ADD MULTILINED FUNCTION HERE
 			print "Please write your snippet in this format: Snippet:What it does. Type ^C when done"
 			line = 0
@@ -70,7 +70,7 @@ class applySnip:
 					f.write("\n" + snippet)
 			print("Done!")
 			snip.appl()
-		elif option == 'n'or option == 'N':
+		elif option == 'n':
 			print "Please write your snippet in this format: Snippet:What it does."
 			snippet = raw_input("codlib> ")
 			if snippet == '/end/':
@@ -80,8 +80,8 @@ class applySnip:
 				f.write("\n" + snippet)
 	def sqlAppl(self):
 		print "Is your snippet multilined? y/n"
-		option = raw_input('codlib> ')
-		if option == 'y' or option == 'Y':
+		option = raw_input('codlib> ').lower()[0]
+		if option == 'y':
 			# ADD MULTILINED FUNCTION HERE
 			print "Please write your snippet in this format: Snippet:What it does. Type ^C when done"
 			line = 0
@@ -92,7 +92,7 @@ class applySnip:
 					f.write("\n" + snippet)
 			print("Done!")
 			snip.appl()
-		elif option == 'n'or option == 'N':
+		elif option == 'n':
 			print "Please write your snippet in this format: Snippet:What it does."
 			snippet = raw_input("codlib> ")
 			if snippet == '/end/':
