@@ -1,8 +1,8 @@
-#! usr/bin/env python
+#!usr/bin/env python
 
-# CodLib v1.2a
+# CodLib v1.21a
 # Programmer: Michael Oselskyi
-#DISCLAIMER: NOT COMPLETE! GUI soon though.
+#DISCLAIMER: NOT COMPLETE! GUI soon though. Implementing new-style classes in next version
 
 
 
@@ -15,12 +15,12 @@ import re
 class searchProg:
 	def search(self):
 		print "Please choose your prog lang\n(1)Python\n(2)SQL[i]"
-		op = raw_input("codlib> ")
+		op = raw_input("codlib> ").lower()[0]
 		if op == '1':
 			search.pySearch()
 		elif op == '2':
 			search.sqlSearch()
-		elif op == 'exit' or op == 'EXIT':
+		elif op == 'e':
 			sys.exit()
 		else:
 			print "Try your query again."
@@ -45,12 +45,12 @@ search = searchProg()
 class applySnip:
 	def appl(self):
 		print "Please choose your prog language\n(1)Python\n(2)SQL[i]\n(3)Main Menu"
-		op = raw_input("codlib> ")
+		op = raw_input("codlib> ").lower()[0]
 		if op == '1':
 			snip.pyAppl()
 		elif op == '2':
 			snip.sqlAppl()
-		elif op == 'exit' or op == 'EXIT':
+		elif op == 'e':
 			sys.exit()
 		elif op == '3':
 			mainMenu()
@@ -125,13 +125,13 @@ _______  _______  ______   _       _________ ______
 |                      =  (2)Apply   =                             |
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++""")
 	
-	op = raw_input("codlib> ")
+	op = raw_input("codlib> ").lower()[0]
 	
 	if op == '1':
 		search.search()
 	elif op == '2':
 		snip.appl()
-	elif op == 'exit' or op == 'EXIT':
+	elif op == 'e':
 			sys.exit()
 	else: 
 		print "Please try again, I did not understand your command."
