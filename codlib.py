@@ -1,6 +1,6 @@
-# CodLib v1.1a
+# CodLib v1.2a
 # Programmer: Michael Oselskyi
-#DISCLAIMER: Not in anyway this is complete. It actually has errors. Cuz it's in alpha still. Yea. GUI coming soon.
+#DISCLAIMER: NOT COMPLETE! GUI soon though.
 
 
 #! usr/bin/env python
@@ -10,7 +10,7 @@ import sys
 import re 
 
 # Classes:
-  
+	
 class searchProg:
 	def search(self):
 		print "Please choose your prog lang\n(1)Python\n(2)SQL[i]"
@@ -62,11 +62,10 @@ class applySnip:
 		option = raw_input('codlib> ')
 		if option == 'y' or option == 'Y':
 			# ADD MULTILINED FUNCTION HERE
-			print "Please write your snippet in this format: Snippet:What it does. Type /end/ when done"
+			print "Please write your snippet in this format: Snippet:What it does. Type ^C when done"
 			line = 0
-			while line < 2000:
+			while line < 1000:
 				line += 1
-				print "Line: ", line
 				snippet = raw_input("codlib> ")
 				with open("python.txt", "a") as f:
 					f.write("\n" + snippet)
@@ -78,12 +77,12 @@ class applySnip:
 			if snippet == '/end/':
 				print("Done!")
 				mainMenu()
-			with open("python.csv", "a") as f:
+			with open("python.txt", "a") as f:
 				f.write("\n" + snippet)
 	def sqlAppl(self):
 		print "Please write your snippet in this format: Snippet:What it does."
 		snippet = raw_input("codlib> ")
-		with open("sql.csv", "a") as f:
+		with open("sql.txt", "a") as f:
 			f.write("\n" + snippet)
 		print("Done!")
 		snip.appl()
