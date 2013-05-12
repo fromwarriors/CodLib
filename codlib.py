@@ -2,7 +2,6 @@
 # Programmer: Michael Oselskyi
 #DISCLAIMER: NOT COMPLETE! GUI soon though.
 
-
 #! usr/bin/env python
 
 import os 
@@ -80,12 +79,27 @@ class applySnip:
 			with open("python.txt", "a") as f:
 				f.write("\n" + snippet)
 	def sqlAppl(self):
-		print "Please write your snippet in this format: Snippet:What it does."
-		snippet = raw_input("codlib> ")
-		with open("sql.txt", "a") as f:
-			f.write("\n" + snippet)
-		print("Done!")
-		snip.appl()
+		print "Is your snippet multilined? y/n"
+		option = raw_input('codlib> ')
+		if option == 'y' or option == 'Y':
+			# ADD MULTILINED FUNCTION HERE
+			print "Please write your snippet in this format: Snippet:What it does. Type ^C when done"
+			line = 0
+			while line < 1000:
+				line += 1
+				snippet = raw_input("codlib> ")
+				with open("sql.txt", "a") as f:
+					f.write("\n" + snippet)
+			print("Done!")
+			snip.appl()
+		elif option == 'n'or option == 'N':
+			print "Please write your snippet in this format: Snippet:What it does."
+			snippet = raw_input("codlib> ")
+			if snippet == '/end/':
+				print("Done!")
+				mainMenu()
+			with open("sql.txt", "a") as f:
+				f.write("\n" + snippet)
 		
 					
 
