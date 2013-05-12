@@ -2,6 +2,8 @@ CodLib
 ======
 
 A code library that I'm working on.(OpenSource)
+Each branch I make is for each version. The master branch will always have the newest version of the program
+======
 
 cd to the folder you put codlib.py in and type the command: python codlib.py
 
