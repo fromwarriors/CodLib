@@ -1,8 +1,9 @@
 #!usr/bin/env python
 
-# CodLib v1.21a
+# CodLib v1.22a
 # Programmer: Michael Oselskyi
-#DISCLAIMER: NOT COMPLETE! GUI soon though. Implementing new-style classes in next version
+#DISCLAIMER: NOT COMPLETE! GUI soon though. Implementing new-style classes in next version(2.0)
+# UPDATE 5/14/13: Added function to search through the sql file.
 
 
 
@@ -37,7 +38,13 @@ class searchProg:
 		
 		
 	def sqlSearch(self):
-		print "NULL"
+		print "Enter your search terms."
+		query = raw_input("codlib> ")
+		
+		for line in open("sql.txt"):
+			if query in line:
+				print line
+		search.search()
 
 search = searchProg()
 
