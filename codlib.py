@@ -5,7 +5,7 @@
 # Programmer: Michael Oselskyi & Natan L
 #DISCLAIMER: NOT COMPLETE! GUI soon though.
 # UPDATE 5/14/13: Added function to search through the sql file.
-# Update 8/9/13: Added new-style classes, fixed the Ascii Art. Bugs: MANY
+# Update 8/9/13: Added new-style classes, fixed the Ascii Art. Python 3. Bugs: MANY
 
 import os
 import sys
