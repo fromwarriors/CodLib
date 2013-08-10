@@ -17,4 +17,4 @@ GUI coming in beta
 
 UPDATE 8/9/13:
 Added new-style classes, fixed the Ascii Art. 
-Bugs: Line 33 and 48 of codlib.py
+Bugs: Menus in codlib.py need to be fixed. Avoid elif mayhem
