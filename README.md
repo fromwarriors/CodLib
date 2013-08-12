@@ -20,3 +20,6 @@ GUI coming in beta
 UPDATE 8/9/13:
 Added new-style classes, fixed the Ascii Art. Updated to python 3.3.2[newest version]
 Bugs: Menus in codlib.py need to be fixed. Avoid elif mayhem.
+
+UPDATE 8/11/13:
+Fixed menu bugs. Fine tuning. v.1.26a
