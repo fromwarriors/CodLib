@@ -88,9 +88,8 @@ class applySnip(object):
             print("Please write your snippet in this format: \
                                 Snippet:What it does.")
             snippet = input("codlib> ")
-            if snippet == '/end/':
-                print("Done!")
-                mainMenu()
+            print("Done!")
+            snip.appl()
             with open("python.txt", "a") as f:
                 f.write("\n" + snippet)
     def sqlAppl(self):
@@ -110,7 +109,7 @@ class applySnip(object):
             snip.appl()
         elif option == 'n':
             print("Please write your snippet in this format: \
-                                Snippet:What it does.")
+ Snippet:What it does.")
             snippet = input("codlib> ")
             if snippet == '/end/':
                 print("Done!")
