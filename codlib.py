@@ -12,17 +12,22 @@
 import os
 import sys
 import functools
-import Logo
 import csv
+
+
+def _print_logo():
+    with open('logo.txt', 'r') as logo:
+        print(logo.read())
 
 
 def _clear_screen():
     os.system(['clear','cls'][os.name == 'nt'])
-    
+
 def _invalid_prompt():
     print("Please try again, I did not understand your command.")
     input("PRESS ENTER")
     _clear_screen()
+
 def exit():
     sys.exit()
 
@@ -42,7 +47,7 @@ def search_file(filename):
 
 def search(): # [RESOLVED]
     print("Please choose your prog lang\n(1)Python\n(2)SQL[i]\n")
-    options = {'1': functools.partial(search_file, 'python.txt'), 
+    options = {'1': functools.partial(search_file, 'python.txt'),
                '2': functools.partial(search_file, 'sql.txt'),'e': sys.exit}
     while 1:
         choice = str(input("CodLib> ")).lower()
@@ -56,14 +61,14 @@ class applySnip(object):
     def appl(self):
         print("Please Choose Your Programming\
  Language\n(1)Python\n(2)SQL[i]\n(3)Main Menu")
-        
+
         options = {
             '1': snip.pyAppl,
             '2': snip.sqlAppl,
             '3': mainMenu,
             'e': sys.exit
             }
-        
+
         while 1:
             choice = str(input("CodLib> ")).lower()
             try:
@@ -80,7 +85,7 @@ class applySnip(object):
                                 Snippet:What it does. Type ^C when done")
             line = 0
             while line < 1000:
-                line += 1  
+                line += 1
                 snippet = input("CodLib> ")
                 with open('python.txt','a') as f:
                     f.write("\n"+ snippet)
@@ -124,13 +129,13 @@ snip = applySnip()
 
 def mainMenu():
     _clear_screen() #Will clear the terminal to avoid clutter.
-    Logo.logo()
+    _print_logo()
     callbacks = [search,snip.appl,exit]
-    choice = int(input('Enter Your Choice: ')) 
+    choice = int(input('Enter Your Choice: '))
     try:
         callbacks[choice]() # call cooresponding options
     except IndexError:
         print('"%s":invalid option. Try Again.'% (choice))
-    
+
 if __name__ == '__main__':
     mainMenu()
